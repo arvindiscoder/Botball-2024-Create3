@@ -144,10 +144,10 @@ int main()
     squareup_working(); // then we square up to get straight
     drive(3400,950);// then we push the poms with the robot into area three
     drive(5000,-950);// then we go back a little bit
-    left();
-    drive(1500,500);
-    right();
-    squareup_working();
+    left(); // face towards moon base 
+    drive(1500,500); // go in front of pom poms  
+    right(); // look at pom poms
+    squareup_working(); // get aligned with pom poms
     drive(3500,950);// we push the poms into area 3
     drive(5000,-950); // then we move back
     squareup_working(); // we square up and get straight
@@ -160,15 +160,15 @@ int main()
     left();// we push all of and turn left
     drive(1000,500);// we move forward drop it in rock bay
     drive(3000,-500);// and then we move back and the wombat stops running
-    left();
-    drive(3000,-950);
-    drive(2500,950);
-    left();
-    squareup_working();
-    drive(500,500);
-    right();
-    line_follow(8000,950,300);
-    drive(2000,-950);
+    left(); // go infront of pwc
+    drive(3000,-950); // pwc squareup
+    drive(2500,950); // go foward infront of rock
+    left();  // turn to rock 
+    squareup_working(); // align with black line 
+    drive(500,500);// go abit forward to be at center of line
+    right(); // turn onto line
+    line_follow(8000,950,300); // go to area 3
+    drive(2000,-950); // back up to give clearance to objects in area 3.
 
 
 
