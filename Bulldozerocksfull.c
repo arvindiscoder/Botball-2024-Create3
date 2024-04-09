@@ -5,8 +5,8 @@
 
 // Author:   Neel Arora, Nimish Nijhawan 
 // Email:    na92085@student.musd.org, nn102597@student.musd.org
-// Coach:     Mr. Tran
-
+// Coach:     Mr. Tran 
+// Cedits Nerd Herd Youtube channel, KISS resources, Botball discord 
 
 
 
