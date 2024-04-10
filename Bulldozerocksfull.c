@@ -133,7 +133,7 @@ void small_left(){
 }
 int main()
 {
-
+    wait_for_light(3);
     onewheelturnleft(); // first we turn left in the small rover bay
     drive(1000,-950);// then we square up by ramming into the pvc pipe behind us
     drive(2000,950); // then we move forward for 2000 ticks at a speed of 950
