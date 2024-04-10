@@ -1,4 +1,3 @@
-#include <kipr/wombat.h>
 // Title:   Bulldozing_Rock_Working Running
 // Files:   main.c
 // Semester:   Rancho Botball Spring 2024
@@ -8,7 +7,7 @@
 // Coach:     Mr. Tran 
 // Cedits Nerd Herd Youtube channel, KISS resources, Botball discord 
 
-
+#include <kipr/wombat.h>
 
 // First we create function called onewheelturnleft this a function we create
 //so that the wombat stops one wheel and turns left because
