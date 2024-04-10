@@ -26,7 +26,7 @@ void onewheelturnright(){
     msleep(2500);
 }
 // Then we have our square up code so that it can correct itself using the color sensors so that it straightens up
-void squareup_working(){
+void squareup_working(){ // Thank you to nerd herd youtube channel
     // We have a grey value which is the average of white value and black so that we can tell that when it is greater then the value it is on black and when it is lower then the value it is on right
     int grey = (3500+3900)/2;
     int right = 4; // The sensor on the right
@@ -88,7 +88,7 @@ int isblack(int pint){
     }
 }
 // Now we have our line follow code, which is neccesary for the run. We created three parameters to ask how far we want it to go, how fast we want to go, and how drastice of a turn do we want to take.
-void line_follow(int distance, int speed, int subtraction){
+void line_follow(int distance, int speed, int subtraction){ 
     // It first clears the motor position so that it gives us a correct reading
     clear_motor_position_counter (0);
     clear_motor_position_counter (3);
@@ -132,7 +132,7 @@ void small_left(){
 }
 int main()
 {
-    wait_for_light(3);
+    wait_for_light(3); // wait for start up light
     onewheelturnleft(); // first we turn left in the small rover bay
     drive(1000,-950);// then we square up by ramming into the pvc pipe behind us
     drive(2000,950); // then we move forward for 2000 ticks at a speed of 950
