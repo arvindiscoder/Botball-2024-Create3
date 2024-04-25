@@ -1,4 +1,4 @@
-// Title:   default tornement code
+// Title:   Bulldozing_Rock_Working Running
 // Files:   main.c
 // Semester:   Rancho Botball Spring 2024
 
@@ -206,6 +206,7 @@ void line_follow_for_switch(int speed){
 int main()
 {
     wait_for_light(3); // wait for start up light
+    shut_down_in(119);
     enable_servos();
     set_servo_position(0,2047);
     msleep(500);
