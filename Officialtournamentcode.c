@@ -12,7 +12,7 @@ void onelinefollow(int distance, int speed){
     cmpc(0);
     while (abs(gmpc(0)) < distance){
         int eror = analog(0) - 1400;
-        float speed_modiier = eror * 0.1;
+        float speed_modiier = eror * 0.15;
         mav(0,speed + speed_modiier);
         mav(3,speed- speed_modiier);
     }
@@ -36,7 +36,7 @@ void switch_the_switch(){
 }
 void locate_switch(){
     enable_servos();
-    set_servo_position(0,1000);
+    set_servo_position(0,1179);
     while(digital(0) == 0 && digital(1) == 0){
         onelinefollow(10,500);
     }
@@ -62,7 +62,7 @@ void onewheelturnright(){
 // Then we have our square up code so that it can correct itself using the color sensors so that it straightens up
 void squareup_working(){ // Thank you to nerd herd youtube channel
     // We have a grey value which is the average of white value and black so that we can tell that when it is greater then the value it is on black and when it is lower then the value it is on right
-    int grey = (3500+3900)/2;
+    int grey = (3300+3800)/2;
     int right = 4; // The sensor on the right
     int left = 5; // sensors on left 
     int mright = 0; // right motor
@@ -221,7 +221,7 @@ int main()
     drive(3400,950);// then we push the poms with the robot into area three
     drive(5000,-950);// then we go back a little bit
     left(); // face towards moon base 
-    set_servo_position(0,1000);
+    set_servo_position(0,1179);
     drive(1800,500); // go in front of pom poms  
     mav(0,0);
     mav(3,0);
@@ -230,28 +230,34 @@ int main()
     drive(3500,950);// we push the poms into area 3
     drive(4000,-950); // then we move back
     squareup_working(); // we square up and get straight
-    onewheelturnleft();// then we turn left
-    drive(1800,950);// then we move forward for a little bit and pick up the rock in the intersection
+    drive(400,500);
+    left();// then we turn left
+    drive(1600,950);// then we move forward for a little bit and pick up the rock in the intersection
     left();// we turn left
     locate_switch();
     switch_the_switch();
-    drive(300,-500);
+    drive(20,-500);
+    mav(0,0);
+    mav(3,0);
+    set_servo_position(0,2047);
+    msleep(500);
+    drive(400,500);
     right();// we do a small right turn so that it can get on the line near the rock bay
-    set_servo_position(0,1161);
+    set_servo_position(0,2047);
     glinefollow(7500,950);// then we line follow and pick up the orange poms and the rock at the end
     onewheelturnleft();
     drive(1000,500);// we move forward drop it in rock bay
     drive(3000,-500);// and then we move back and the wombat stops running
     left(); // go infront of pwc
     drive(3000,-950); // pwc squareup
-    drive(3200,950); // go foward infront of rock
+    drive(3700,950); // go foward infront of rock
     left();  // turn to rock 
     squareup_working(); // align with black line 
-    drive(700,500);// go abit forward to be at center of line
+    drive(750,500);// go abit forward to be at center of line
     right(); // turn onto line
-    onelinefollow(7500,950);
-    drive(2000,-950); // back up to give clearance to objects in area 3.
-    set_servo_position(0,1161);
+    onelinefollow(7000,950);
+    drive(4000,-950); // back up to give clearance to objects in area 3.
+    set_servo_position(0,2047);
     msleep(500);
 
 
