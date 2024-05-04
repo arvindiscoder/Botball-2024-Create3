@@ -32,21 +32,21 @@ void black_line(){
 
 void line_follow(){
     enable_servos();
-    set_servo_position(3,877);
+    set_servo_position(3,500);
     msleep(500);
     int mid = 1000;//sets variable as integer
     create3_connect();
     while(analog(0) < 2800){//this isn't true
         if (analog(2)>= mid){// If this is true
-            create3_velocity_set_components(0.1,0.3);
+            create3_velocity_set_components(0.1,0.2);
         }
         else{
-            create3_velocity_set_components(0.1,-0.3); 
+            create3_velocity_set_components(0.1,-0.2); 
         }
     }
     create3_velocity_set_components(0,0);
 
-    set_servo_position(3,1500);
+    set_servo_position(3,1400);
     msleep(500);
 }
 
@@ -74,7 +74,7 @@ void turn_value(){
 int main()
 {  
     wait_for_light(5);
-    shut_down_in(119);
+    shut_down_in(110);
     //printf("ITTTS PAARRTYY TIIMMEE!!");
     msleep(70000);
     enable_servos();
@@ -87,7 +87,7 @@ int main()
     //set_servo_position(2,100);
     create3_drive_straight(0.4,0.49);
     black_line();
-    create3_rotate_degrees(95,90);
+    create3_rotate_degrees(100,90);
     line_follow();
    // create3_drive_straight(0.05,0.49);
     //pick_up_object_code();
@@ -98,11 +98,11 @@ int main()
     create3_drive_straight(0.3,0.49);
     create3_rotate_degrees(90,90);
     create3_drive_straight(-0.1,0.49);
+    black_line();
+   // while(analog(2)<1500){
+        //create3_velocity_set_components(0.1,0);
 
-    while(analog(2)<1500){
-        create3_velocity_set_components(0.1,0);
-
-    }
+  //  }
     create3_drive_straight(0,0.49);
     set_servo_position(0,2047);
     msleep(500);
